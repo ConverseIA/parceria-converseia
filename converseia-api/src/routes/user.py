@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify, request
 from src.models.user import User, db
+from werkzeug.security import generate_password_hash, check_password_hash
 
 user_bp = Blueprint('user', __name__)
 
@@ -10,12 +11,25 @@ def get_users():
 
 @user_bp.route('/users', methods=['POST'])
 def create_user():
-    
     data = request.json
-    user = User(username=data['username'], email=data['email'])
-    db.session.add(user)
+    
+    # Validação para garantir que os dados necessários foram enviados
+    if not data or 'username' not in data or 'email' not in data or 'password' not in data:
+        return jsonify({"error": "Missing username, email, or password"}), 400
+
+    # Criptografa a senha antes de salvar
+    hashed_password = generate_password_hash(data['password'], method='pbkdf2:sha256')
+    
+    # Cria o novo usuário COM a senha criptografada
+    new_user = User(
+        username=data['username'], 
+        email=data['email'], 
+        password=hashed_password
+    )
+    
+    db.session.add(new_user)
     db.session.commit()
-    return jsonify(user.to_dict()), 201
+    return jsonify(new_user.to_dict()), 201
 
 @user_bp.route('/users/<int:user_id>', methods=['GET'])
 def get_user(user_id):
@@ -28,6 +42,11 @@ def update_user(user_id):
     data = request.json
     user.username = data.get('username', user.username)
     user.email = data.get('email', user.email)
+
+    # Se uma nova senha for fornecida, atualize-a
+    if 'password' in data:
+        user.password = generate_password_hash(data['password'], method='pbkdf2:sha256')
+
     db.session.commit()
     return jsonify(user.to_dict())
 
