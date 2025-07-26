@@ -56,3 +56,20 @@ def delete_user(user_id):
     db.session.delete(user)
     db.session.commit()
     return '', 204
+
+# --- NOVA ROTA DE LOGIN ADICIONADA AQUI ---
+@user_bp.route('/login', methods=['POST'])
+def login():
+    data = request.json
+    if not data or 'email' not in data or 'password' not in data:
+        return jsonify({"error": "E-mail e senha são obrigatórios"}), 400
+
+    user = User.query.filter_by(email=data['email']).first()
+
+    # Verifica se o usuário existe e se a senha está correta
+    if not user or not check_password_hash(user.password, data['password']):
+        return jsonify({"error": "Credenciais inválidas"}), 401
+    
+    # Se o login for bem-sucedido:
+    # Futuramente, você pode adicionar a geração de um token (JWT) aqui.
+    return jsonify({"message": "Login realizado com sucesso!", "user": user.to_dict()}), 200
