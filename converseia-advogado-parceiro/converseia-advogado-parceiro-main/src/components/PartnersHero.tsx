@@ -14,7 +14,7 @@ export default function PartnersHero() {
           {/* Left Content */}
           <div className="flex-1 text-center lg:text-left">
             <div className="flex items-center justify-center lg:justify-start mb-6">
-              <img src="/logoescurahorizontal.png" alt="ConverseIA Direito" className="h-12" />
+              <img src="/logotodabracahorizontal.png" alt="ConverseIA Direito" className="h-12" />
             </div>
 
             <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">

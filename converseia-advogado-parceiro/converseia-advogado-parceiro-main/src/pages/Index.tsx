@@ -12,7 +12,7 @@ const Index = () => {
       <section className="bg-gradient-hero text-white py-20">
         <div className="container mx-auto px-6 text-center">
           <div className="flex items-center justify-center mb-8">
-            <img src="/logoescurahorizontal.png" alt="ConverseIA Direito" className="h-16" />
+            <img src="/logotodabracahorizontal.png" alt="ConverseIA Direito" className="h-16" />
           </div>
           
           <h2 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
