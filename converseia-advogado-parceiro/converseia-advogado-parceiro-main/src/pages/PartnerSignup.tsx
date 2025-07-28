@@ -4,7 +4,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Partnership from './Partnership';
-import PartnerSignup from "./pages/PartnerSignup";
 import PartnerDashboard from "./pages/PartnerDashboard";
 import NotFound from "./pages/NotFound";
 // --- 1. IMPORTAR A NOVA PÁGINA DE LOGIN ---
