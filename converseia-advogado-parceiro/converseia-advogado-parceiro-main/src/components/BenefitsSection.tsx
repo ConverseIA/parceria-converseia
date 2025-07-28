@@ -14,7 +14,7 @@ const benefits = [
   {
     icon: DollarSign,
     title: "Ganhos Exponenciais",
-    description: "Comissão de 35% em todas as vendas e renovações. Ao atingir R$ 50.000 em faturamento, sua comissão sobe para 50%, garantindo uma receita passiva e crescente. Além disso, ganhe comissões em todos os novos produtos e cross-sells que oferecermos.",
+    description: "Comissão de 30% em todas as vendas e renovações. Ao atingir R$ 50.000 em faturamento, sua comissão sobe para 50%, garantindo uma receita passiva e crescente. Além disso, ganhe comissões em todos os novos produtos e cross-sells que oferecermos.",
     badge: "Receita Recorrente"
   },
   {

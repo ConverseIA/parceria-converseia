@@ -25,7 +25,7 @@ export default function PartnersHero() {
             
             <p className="text-xl lg:text-2xl mb-8 opacity-90 leading-relaxed">
               Transforme escritórios de advocacia com automação inteligente.<br />
-              Ganhe <strong>35-50% de comissão</strong> + <strong>70% de desconto na plataforma</strong>.
+              Ganhe <strong>30-50% de comissão</strong> + <strong>70% de desconto na plataforma</strong>.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -51,7 +51,7 @@ export default function PartnersHero() {
                   <Zap className="w-8 h-8 text-white mr-3" />
                   <h3 className="text-xl font-semibold text-white">Comissão por Venda</h3>
                 </div>
-                <p className="text-3xl font-bold text-primary-glow">35-50%</p>
+                <p className="text-3xl font-bold text-primary-glow">30-50%</p>
                 <p className="opacity-80 text-white">em todas as vendas</p>
               </div>
 

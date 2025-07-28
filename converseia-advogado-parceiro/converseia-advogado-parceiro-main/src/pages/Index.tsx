@@ -49,7 +49,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             
             <div className="p-6">
-              <div className="text-4xl font-bold text-primary mb-2">35-50%</div>
+              <div className="text-4xl font-bold text-primary mb-2">30-50%</div>
               <h3 className="text-xl font-semibold mb-2">Comissão por Venda</h3>
               <p className="text-muted-foreground">Em todas as vendas e renovações</p>
             </div>

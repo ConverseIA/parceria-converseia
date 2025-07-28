@@ -144,10 +144,10 @@ def confirm_sale(sale_id):
             partner_id=sale.partner_id, status='confirmed'
         ).scalar() or 0
         
-        # Determinar percentual de comissão (35% padrão, 50% após R$50.000)
+        # Determinar percentual de comissão (30% padrão, 50% após R$50.000)
         commission_rate = 0.50 if total_revenue >= 50000 else 0.35
         
-        # Gerar comissão (35% ou 50% dependendo do faturamento)
+        # Gerar comissão (30% ou 50% dependendo do faturamento)
         commission = Commission(
             partner_id=sale.partner_id,
             sale_id=sale.id,

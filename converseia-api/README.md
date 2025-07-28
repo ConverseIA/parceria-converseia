@@ -42,7 +42,7 @@ converseia-api/
 - ✅ Cadastro e gerenciamento de parceiros
 - ✅ Sistema de vendas e comissões
 - ✅ Métodos de pagamento
-- ✅ Cálculo automático de comissões (100% inicial + 35% recorrente)
+- ✅ Cálculo automático de comissões (100% inicial + 30% recorrente)
 - ✅ CORS habilitado para integração frontend
 
 ## Como Executar Localmente

@@ -129,7 +129,7 @@ export default function PartnerDashboard() {
               <TrendingUp className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-primary">35%</div>
+              <div className="text-2xl font-bold text-primary">30%</div>
               <p className="text-xs text-muted-foreground">Próximo nível: 50%</p>
             </CardContent>
           </Card>
@@ -236,7 +236,7 @@ export default function PartnerDashboard() {
                   <div className="p-4 bg-primary/5 border border-primary/20 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <span className="font-medium">Comissão Padrão</span>
-                      <Badge variant="secondary" className="bg-primary/10 text-primary">35%</Badge>
+                      <Badge variant="secondary" className="bg-primary/10 text-primary">30%</Badge>
                     </div>
                     <p className="text-sm text-muted-foreground">Em todas as vendas e renovações</p>
                   </div>

@@ -116,7 +116,7 @@ Listar métodos de pagamento do parceiro
 
 ## Estrutura de Comissões
 
-- **Comissão Padrão:** 35% do valor de todas as vendas
+- **Comissão Padrão:** 30% do valor de todas as vendas
 - **Comissão Premium:** 50% para parceiros que atingem R$50.000 em faturamento
 - **Desconto na Plataforma:** 70% de desconto para demonstrações aos clientes
 - **Cross-sells:** Comissões aplicáveis a todos os novos produtos lançados
