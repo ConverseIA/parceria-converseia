@@ -3,6 +3,10 @@ import sys
 from flask import Flask, send_from_directory
 from flask_cors import CORS
 from src.models.user import db
+from dotenv import load_dotenv
+
+# Carregar variáveis de ambiente
+load_dotenv()
 
 # DON'T CHANGE THIS !!!
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
@@ -38,7 +42,7 @@ app.register_blueprint(partner_bp, url_prefix='/api')
 
 # --- Criar todas as tabelas do banco de dados na inicialização ---
 # Importar todos os modelos para garantir que são registados antes de criar as tabelas
-from src.models.partner import Partner, Sale, Commission, PaymentMethod
+from src.models.partner import Partner, Sale, Commission, PaymentMethod, PaymentTransaction
 from src.models.user import User
 
 with app.app_context():

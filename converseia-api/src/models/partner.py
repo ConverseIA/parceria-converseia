@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import json
 
 db = SQLAlchemy()
 
@@ -46,3 +47,26 @@ class PaymentMethod(db.Model):
     is_default = db.Column(db.Boolean, default=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
+    def get_details(self):
+        """Retorna os detalhes do método de pagamento como dict"""
+        try:
+            return json.loads(self.details) if self.details else {}
+        except:
+            return {}
+    
+    def set_details(self, details_dict):
+        """Define os detalhes do método de pagamento a partir de um dict"""
+        self.details = json.dumps(details_dict)
+
+class PaymentTransaction(db.Model):
+    """Modelo para registrar transações de pagamento"""
+    id = db.Column(db.Integer, primary_key=True)
+    partner_id = db.Column(db.Integer, db.ForeignKey('partner.id'), nullable=False)
+    commission_id = db.Column(db.Integer, db.ForeignKey('commission.id'), nullable=True)
+    amount = db.Column(db.Float, nullable=False)
+    payment_method = db.Column(db.String(20), nullable=False)  # pix, bank_transfer, stripe
+    external_id = db.Column(db.String(100))  # ID do gateway de pagamento
+    status = db.Column(db.String(20), default='pending')  # pending, processing, completed, failed
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    completed_at = db.Column(db.DateTime)
+    metadata = db.Column(db.Text)  # JSON com dados adicionais

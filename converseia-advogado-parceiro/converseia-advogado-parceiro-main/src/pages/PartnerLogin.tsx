@@ -7,7 +7,6 @@ import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { Mail, KeyRound } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/converseia-logo.png";
 
 // URL da sua API. O Vite substitui esta variável pelo valor no seu .env ou configuração do Render
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
@@ -75,7 +74,7 @@ export default function PartnerLogin() {
         <div className="max-w-md mx-auto">
           <Card className="border-2 shadow-lg">
             <CardHeader className="text-center">
-              <img src={logo} alt="ConverseIA Direito" className="w-16 h-16 mx-auto mb-4" />
+              <img src="/iconecomaprincipalcornalogoefundobranco.png" alt="ConverseIA Direito" className="w-16 h-16 mx-auto mb-4" />
               <CardTitle className="text-3xl">Acesse sua Conta</CardTitle>
               <p className="text-muted-foreground pt-2">
                 Não tem uma conta?{" "}
